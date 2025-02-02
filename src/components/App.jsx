@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { animateScroll } from 'react-scroll';
 import toast from 'react-hot-toast';
-import fetchApi from './fetchApi';
+import fetchApi from '../services/fetchApi';
 import './App.css';
 import SearchBar from './SearchBar/SearchBar';
 import ImageGallery from './ImageGallery/ImageGallery';
@@ -45,7 +45,7 @@ function App() {
         );
         return;
       }
-      if (data.results.length < 20 && totalPages < currentPage) {
+      if (data.results.length < 20 || totalPages > currentPage) {
         setLoading(false);
         toast.error(
           'There are not enough images to load more. Try a different query!',
@@ -114,20 +114,24 @@ function App() {
     }
   };
 
+  const memoizedPhotos = useMemo(() => photos, [photos]);
+
+   const memoizedTotalPages = useMemo(() => totalPages, [totalPages]);
+
   return (
     <>
       <SearchBar onSearch={handleSearch} />
       <div className="container">
         {error && <ErrorMesage />}
-        {photos.length > 0 && (
-          <ImageGallery images={photos} onImageClick={handleImageClick} />
+        {memoizedPhotos.length > 0 && (
+          <ImageGallery images={memoizedPhotos} onImageClick={handleImageClick} />
         )}
         <ImageModal
           isOpen={modalIsOpen}
           onClose={closeModal}
           imageSrc={selectedImage}
         />
-        {photos.length > 0 && !loading && currentPage < totalPages && (
+        {memoizedPhotos.length > 0 && !loading && currentPage < memoizedTotalPages && (
           <LoadMoreBtn onLoadMore={handleLoadMore} />
         )}
         {loading && <Loader />}
