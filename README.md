@@ -1,8 +1,13 @@
-# React + Vite
+📸 My Gallery React
+Description:
+My Gallery React is a simple web application for browsing and searching images from an external API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔹 Technologies Used
+React – UI framework
+Fetch API / Axios – API integration
+React Hooks – useState, useMemo
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📌 Features
+✅ Browse images in a gallery view
+✅ Search images by keywords
+✅ Responsive design
