@@ -45,7 +45,7 @@ function App() {
         );
         return;
       }
-      if (data.results.length < 20 || totalPages > currentPage) {
+      if (data.results.length < 20 || totalPages < currentPage) {
         setLoading(false);
         toast.error(
           'There are not enough images to load more. Try a different query!',

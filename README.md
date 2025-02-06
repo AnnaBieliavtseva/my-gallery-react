@@ -1,13 +1,13 @@
-📸 My Gallery React
-Description:
-My Gallery React is a simple web application for browsing and searching images from an external API.
+<h1 align="center">📸 My Gallery React </h1>
+<h2>Description: </h2>
+My Gallery React is a simple web application for browsing and searching images from an external API.&nbsp;
 
-🔹 Technologies Used
-React – UI framework
-Fetch API / Axios – API integration
-React Hooks – useState, useMemo
+<h3>🔹 Technologies Used: </h3> 
+React – UI framework &nbsp;
+Fetch API / Axios – API integration &nbsp;
+React Hooks – useState, useMemo&nbsp;
 
-📌 Features
-✅ Browse images in a gallery view
-✅ Search images by keywords
-✅ Responsive design
+<h3>📌 Features</h3>
+✅ Browse images in a gallery view &nbsp;
+✅ Search images by keywords&nbsp;
+✅ Responsive design&nbsp;
